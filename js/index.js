@@ -1,5 +1,6 @@
 console.log("connected");
 
+  // Temporary function to mimic login function
   function getAllUsers() {
     const USERS = [
       {

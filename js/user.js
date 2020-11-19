@@ -1,5 +1,5 @@
 class User {
-  constructor(email, password) {
+  constructor(email=null, password=null) {
     console.log("I deliver a new user");
     this.email = email;
     this.password = password;
@@ -9,18 +9,46 @@ class User {
     };
   }
 
+  setEmail(email){
+    this.email = email;
+  }
+
+  getEmail(){
+    return this.email;
+  }
+
+  setPassword(password){
+    this.password = password;
+  }
+  getPassword(){
+    return this.password;
+  }
+
   printUsers(){
     return getAllUsers();
   }
+
   createAccount(email, password){
     console.log("fetch to post the new user");
   }
 
   login(email, password){
     console.log("fetch to login the User");
+    if (email != null && password != null) {
+      if (email != "" && password != "") {
+        console.log("email y password no son empty or null");
+        this.setEmail(email)
+        this.setPassword(password)
+        return this.authenticate()
+      }
+    }
+    return alert("User or password cannot be empty or null")
+  }
 
-    this.user.username = email;
-    this.user.password = password;
+  authenticate(){
+    let users = getAllUsers()
+    let user = users.filter(current => current.username == this.email && current.password == this.password)
+    return user
   }
 
   logout(){
