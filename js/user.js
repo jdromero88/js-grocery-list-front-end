@@ -1,12 +1,8 @@
 class User {
-  constructor(email=null, password=null) {
+  constructor() {
     console.log("I deliver a new user");
-    this.email = email;
-    this.password = password;
-    this.user = {
-      username: null,
-      password: null
-    };
+    this.email = null;
+    this.password = null;
   }
 
   setEmail(email){
@@ -24,43 +20,41 @@ class User {
     return this.password;
   }
 
-  printUsers(){
-    return getAllUsers();
-  }
-
   createAccount(email, password){
-    console.log("fetch to post the new user");
+    let configOptions ={
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify( {email: email, password: password} )
+    }
+    fetch( getBaseURL() + "/users", configOptions)
+    .then( response => response.json() )
+    .then( user => user )
+    .catch( error => console.error(error) )
   }
 
   login(email, password){
-    console.log("fetch to login the User");
-    if (email != null && password != null) {
-      if (email != "" && password != "") {
-        console.log("email y password no son empty or null");
-        this.setEmail(email)
-        this.setPassword(password)
-        return this.authenticate()
-      }
+    this.setEmail(email)
+    this.setPassword(password)
+    let configOptions = {
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify( {email: this.email, password: this.password} )
     }
-    return alert("User or password cannot be empty or null")
-  }
-
-  authenticate(){
-    let users = getAllUsers()
-    let user = users.filter(current => current.username == this.email && current.password == this.password)
-    return user
+    fetch( getBaseURL() + "/login", configOptions )
+    .then( response => response.json() )
+    .then( currentUser => console.log(currentUser) )
+    .catch( error => console.error(error) )
   }
 
   logout(){
-    this.user = {
-      username:null,
-      password:null
-    };
+    this.setEmail(null)
+    this.setPassword(null)
+    console.log("post to logout in the backend");
   }
 
   updateAccount(email, password){
     console.log("Patch to udpate the user account");
-    this.user.username = email;
+    this.user.email = email;
     this.user.password = password;
   }
 

@@ -1,16 +1,27 @@
 console.log("connected");
+let ALL_USERS = []
+let currentUser = null
+let newUser = null;
+function getBaseURL() {
+  return "http://localhost:3000"
+}
 
-  // Temporary function to mimic login function
-  function getAllUsers() {
-    const USERS = [
-      {
-        username: "jr@gmail.com",
-        password: "password"
-      },
-      {
-        username: "km@gmail.com",
-        password: "password"
-      }
-    ]
-    return USERS
+function getHeaders() {
+  return {
+    "Content-Type": "application/json",
+    "Accept": "application/json"
   }
+}
+
+function getUsers() {
+  fetch( getBaseURL() + "/users")
+  .then( response => response.json() )
+  .then( users => ALL_USERS = users )
+  .catch( error => console.error(error) )
+}
+
+function signup(email, password) {
+  newUser = new User()
+  newUser.createAccount(email, password)
+  newUser = newUser
+}
