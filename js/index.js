@@ -1,7 +1,7 @@
 console.log("connected");
 let ALL_USERS = []
 let currentUser = null
-let newUser = null;
+
 function getBaseURL() {
   return "http://localhost:3000"
 }
@@ -21,7 +21,12 @@ function getUsers() {
 }
 
 function signup(email, password) {
-  newUser = new User()
-  newUser.createAccount(email, password)
-  newUser = newUser
+  let newUser = new User(email, password)
+  newUser.createAccount()
+}
+
+function login(email, password){
+  user = new User(email, password)
+  currentUser = user.authenticate()
+
 }

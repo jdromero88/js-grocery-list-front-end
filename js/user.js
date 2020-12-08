@@ -1,8 +1,8 @@
 class User {
-  constructor() {
+  constructor(email, password) {
     console.log("I deliver a new user");
-    this.email = null;
-    this.password = null;
+    this.email = email;
+    this.password = password;
   }
 
   setEmail(email){
@@ -20,21 +20,23 @@ class User {
     return this.password;
   }
 
-  createAccount(email, password){
+  createAccount(){
     let configOptions ={
       method: "POST",
       headers: getHeaders(),
-      body: JSON.stringify( {email: email, password: password} )
+      body: JSON.stringify( {email: this.email, password: this.password} )
     }
     fetch( getBaseURL() + "/users", configOptions)
     .then( response => response.json() )
-    .then( user => user )
+    .then( user => {
+      return user
+    })
     .catch( error => console.error(error) )
   }
 
-  login(email, password){
-    this.setEmail(email)
-    this.setPassword(password)
+
+
+  authenticate(){
     let configOptions = {
       method: "POST",
       headers: getHeaders(),
@@ -42,7 +44,7 @@ class User {
     }
     fetch( getBaseURL() + "/login", configOptions )
     .then( response => response.json() )
-    .then( currentUser => console.log(currentUser) )
+    .then( currentUser => currentUser )
     .catch( error => console.error(error) )
   }
 
