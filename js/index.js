@@ -1,4 +1,4 @@
-console.log("connected");
+
 let ALL_USERS = []
 let currentUser = null
 
@@ -25,13 +25,25 @@ function signup(email, password) {
   newUser.createAccount()
 }
 
-function login(email, password){
+function login(event){
+  let email = document.getElementById("email").value
+  let password = document.getElementById("password").value
   user = new User(email, password)
   currentUser = user.authenticate()
+  // console.log(email);
+  event.preventDefault()
+}
+
+function alertLogin() {
+  alert("Complete the fields.")
 }
 
 function validateLogin() {
-  
+  (email != "" || password != "") ? true : false
 }
 
-form.addEventListener('submit', login)
+const LOGIN_FORM = document.getElementById("login-form")
+LOGIN_FORM.addEventListener('submit', login)
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("connected");
+})
