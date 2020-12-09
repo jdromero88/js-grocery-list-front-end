@@ -44,8 +44,13 @@ class User {
     }
     fetch( getBaseURL() + "/login", configOptions )
     .then( response => response.json() )
-    .then( currentUser => currentUser )
+    .then( currentUser => this.showProfile(currentUser) )
     .catch( error => console.error(error) )
+  }
+
+  showProfile(currentUser){
+    console.log(currentUser);
+    return currentUser
   }
 
   logout(){

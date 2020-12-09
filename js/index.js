@@ -28,5 +28,10 @@ function signup(email, password) {
 function login(email, password){
   user = new User(email, password)
   currentUser = user.authenticate()
-
 }
+
+function validateLogin() {
+  
+}
+
+form.addEventListener('submit', login)
