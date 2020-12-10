@@ -1,0 +1,16 @@
+$gray: #cccccc;
+
+body{
+  width: 90%;
+  background-color: $gray;
+  margin: 0 auto;
+}
+
+input{
+  display: block;
+  margin: 0 auto;
+}
+
+.login{
+  padding: 5rem 2rem;
+}

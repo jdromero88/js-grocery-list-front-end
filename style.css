@@ -1,0 +1,16 @@
+body {
+  width: 90%;
+  background-color: #cccccc;
+  margin: 0 auto;
+}
+
+input {
+  display: block;
+  margin: 0 auto;
+}
+
+.login {
+  padding: 5rem 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */
