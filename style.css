@@ -1,16 +1,50 @@
-body {
-  width: 90%;
-  background-color: #cccccc;
-  margin: 0 auto;
+html {
+  font-size: calc(2em + 1vw);
 }
 
-input {
-  display: block;
+body {
+  width: 98%;
+  background-color: #cccccc;
   margin: 0 auto;
+  height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
 }
 
 .login {
-  padding: 5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.user-information input {
+  display: block;
+}
+
+.login-buttons {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media (max-width: 360px) {
+  body {
+    background-color: #f9f9f9;
+    font-size: 1em;
+  }
+}
+@media (min-width: 801px) {
+  body {
+    background-color: #1094f4;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

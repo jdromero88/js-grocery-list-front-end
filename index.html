@@ -2,18 +2,26 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <title>Grocery List</title>
   </head>
   <body>
     <div class="main">
-
-      <form class="login" id="login-form">
-        <input id="email" type="email" placeholder="youremail@example.com" alt="email" required>
-        <input id="password" type="password" placeholder="password" alt="password"
-        autocomplete="current-password" minlength="7" required>
-        <input type="submit" value="Login" >
-      </form>
+      <div class="login">
+        <form id="login-form">
+          <h1>Login</h1>
+          <div class="user-information">
+            <input class="form-input" id="email" type="email" placeholder="youremail@example.com" alt="email" required>
+            <input class="form-input" id="password" type="password" placeholder="password" alt="password"
+            autocomplete="current-password" minlength="7" required>
+          </div>
+          <div class="login-buttons">
+            <input class="form-login-buttons" type="submit" value="Login" >
+            <input class="form-login-buttons" type="reset" value="Clear form">
+          </div>
+        </form>
+      </div>
     </div>
     <script src="./js/index.js" charset="utf-8"></script>
     <script src="./js/user.js" charset="utf-8"></script>

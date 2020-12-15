@@ -1,16 +1,59 @@
 $gray: #cccccc;
+$grayish: #f9f9f9;
+$blue: #1094f4;
+html {
+  font-size: calc(2em + 1vw);
+  // font-size: 3em;
+}
 
-body{
-  width: 90%;
+body {
+  width: 98%;
   background-color: $gray;
   margin: 0 auto;
+  height: 100vh;
 }
 
-input{
+img {
+  max-width: 100%;
   display: block;
-  margin: 0 auto;
 }
 
-.login{
-  padding: 5rem 2rem;
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.user-information input {
+  display: block;
+}
+
+.login-buttons {
+  display: flex;
+  align-items: flex-end;
+}
+
+@media (max-width: 360px) {
+  body {
+    background-color: $grayish;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+
+  }
+}
+
+@media (min-width: 801px) {
+  body {
+    background-color: $blue;
+  }
 }
