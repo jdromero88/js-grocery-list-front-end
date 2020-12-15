@@ -1,5 +1,5 @@
 html {
-  font-size: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(1rem, 5vw, 2rem);
 }
 
 body {
@@ -35,7 +35,21 @@ form {
 
 .user-information input {
   display: block;
-  font-size: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.btn {
+  color: #f9f9f9;
+  border: none;
+  padding: 5px;
+}
+
+.btn-green {
+  background-color: #5dcc3b;
+}
+
+.btn-red {
+  background-color: #ee3a3a;
 }
 
 .login-buttons {
@@ -44,13 +58,17 @@ form {
 }
 
 .login-buttons input {
-  font-size: clamp(1rem, 5vw, 3rem);
+  font-size: clamp(1rem, 5vw, 2rem);
 }
 
 @media (max-width: 360px) {
   body {
     background-color: #f9f9f9;
-    font-size: 1em;
+  }
+}
+@media (min-width: 361px) {
+  body {
+    background-color: #cccccc;
   }
 }
 @media (min-width: 801px) {

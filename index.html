@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="main">
-      <div class="center login">
+      <div id="login" class="center login">
         <form id="login-form">
           <h1 class="center">Login</h1>
           <div class="user-information">
@@ -17,10 +17,27 @@
             autocomplete="current-password" minlength="7" required>
           </div>
           <div class="login-buttons">
-            <input class="form-login-buttons" type="submit" value="Login" >
-            <input class="form-login-buttons" type="reset" value="Clear form">
+            <input class="btn btn-green" type="submit" value="Login" >
+            <input class="btn btn-red" type="reset" value="Clear form">
           </div>
         </form>
+      </div>
+      <div id="dashboard" class="">
+        <h2>here goes the grocery lists</h2>
+        <div id="user-info">
+          <h2>Jose Romero</h2>
+          <img src="https://p7.hiclipart.com/preview/442/477/305/computer-icons-user-profile-avatar-profile.jpg" alt="user image">
+          <p>bio goes here</p>
+
+        </div>
+        <div id="grocery-lists">
+          <ul>
+            <li>Nombre: <a href="#">Lista 1</a></li>
+            <li>Nombre: <a href="#">Lista 2</a></li>
+            <li>Nombre: <a href="#">Lista 3</a></li>
+            <li>Nombre: <a href="#">Comprar urgente</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <script src="./js/index.js" charset="utf-8"></script>
