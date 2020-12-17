@@ -42,7 +42,9 @@ class User {
     }
     fetch( getBaseURL() + "/login", configOptions )
     .then( response => response.json() )
-    .then( currentUser => this.showProfile(currentUser) )
+    .then( currentUser => {
+      currentUser.error != true ? this.showProfile(currentUser) : this.showErrorMessage(currentUser)
+    } )
     .catch( error => console.error(error) )
   }
 
@@ -64,6 +66,10 @@ class User {
     h2ElUserName.textContent = `${currentUser.first_name} ${currentUser.last_name}`
     let pElBio = document.getElementById("bio")
     pElBio.textContent = `${currentUser.bio}`
+  }
+
+  showErrorMessage(currentUser){
+    alert(currentUser.message)
   }
 
   logout(){
