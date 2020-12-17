@@ -75,16 +75,33 @@ input.btn {
   height: 2em;
   border-style: solid;
   border-width: 0.2em;
-  border-radius: 30%;
+  border-radius: 25% 25% 0 0;
 }
 
 .user-profile {
   width: 20%;
 }
 
+.profile-pic {
+  width: 100%;
+}
+
+.center-content {
+  margin: 0 auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
 /* list */
 .list {
   width: 80%;
+  margin: 0 2%;
 }
 
 @media (max-width: 360px) {
