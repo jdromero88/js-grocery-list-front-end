@@ -29,7 +29,8 @@ function login(event){
   let email = document.getElementById("email").value
   let password = document.getElementById("password").value
   user = new User(email, password)
-  currentUser = user.authenticate()
+  debugger
+  user.authenticate()
   // console.log(email);
   event.preventDefault()
 }

@@ -34,8 +34,6 @@ class User {
     .catch( error => console.error(error) )
   }
 
-
-
   authenticate(){
     let configOptions = {
       method: "POST",
@@ -50,7 +48,22 @@ class User {
 
   showProfile(currentUser){
     console.log(currentUser);
-    return currentUser
+    let divLogin = document.getElementById("login")
+    let divDashboard = document.getElementById("dashboard")
+    let divUserInfo = document.getElementById("user-info")
+    let divList = document.getElementById("list")
+    divLogin.remove()
+    divList.hidden = false
+    divUserInfo.hidden = false
+    divDashboard.hidden = false
+    this.showUserData(currentUser)
+  }
+
+  showUserData(currentUser){
+    let h2ElUserName = document.getElementById("user-name")
+    h2ElUserName.textContent = `${currentUser.first_name} ${currentUser.last_name}`
+    let pElBio = document.getElementById("bio")
+    pElBio.textContent = `${currentUser.bio}`
   }
 
   logout(){
