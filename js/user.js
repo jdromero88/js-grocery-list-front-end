@@ -35,17 +35,29 @@ class User {
   }
 
   authenticate(){
-    let configOptions = {
-      method: "POST",
-      headers: getHeaders(),
-      body: JSON.stringify( {email: this.email, password: this.password} )
+    // passing a static user 
+    // for testing purpose not doing real authentication.
+    let currentUser = {
+      first_name: "Jose",
+      last_name: "Romero",
+      bio: "Hola Mundo estoy volviendo un Developer profesional.",
+      email: "jr@gmail.com",
+      password: "password"
     }
-    fetch( getBaseURL() + "/login", configOptions )
-    .then( response => response.json() )
-    .then( currentUser => {
-      currentUser.error != true ? this.showProfile(currentUser) : this.showErrorMessage(currentUser)
-    } )
-    .catch( error => console.error(error) )
+    this.showProfile(currentUser)
+    
+    // Uncomment this to made real authentication working
+    // let configOptions = {
+    //   method: "POST",
+    //   headers: getHeaders(),
+    //   body: JSON.stringify( {email: this.email, password: this.password} )
+    // }
+    // fetch( getBaseURL() + "/login", configOptions )
+    // .then( response => response.json() )
+    // .then( currentUser => {
+    //   currentUser.error != true ? this.showProfile(currentUser) : this.showErrorMessage(currentUser)
+    // } )
+    // .catch( error => console.error(error) )
   }
 
   showProfile(currentUser){
@@ -59,6 +71,7 @@ class User {
     divUserInfo.hidden = false
     divDashboard.hidden = false
     this.showUserData(currentUser)
+    getGroceryLists().then( showGroceryList() )
   }
 
   showUserData(currentUser){
