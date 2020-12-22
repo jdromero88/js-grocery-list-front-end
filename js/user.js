@@ -3,6 +3,10 @@ class User {
     console.log("I deliver a new user");
     this.email = email;
     this.password = password;
+    this.first_name = null;
+    this.last_name = null;
+    this.avatar = null;
+    this.bio = null;
   }
 
   setEmail(email){
@@ -19,6 +23,35 @@ class User {
   getPassword(){
     return this.password;
   }
+
+  setFirstName(first_name){
+    this.first_name = first_name;
+  }
+  getFirstName(){
+    return this.first_name;
+  }
+
+  setLastName(last_name){
+    this.last_name = last_name;
+  }
+  getLastName(){
+    return this.last_name;
+  }
+
+  setAvatar(avatar){
+    this.avatar = avatar;
+  }
+  getAvatar(){
+    return this.avatar;
+  }
+
+  setBio(bio){
+    this.bio = bio;
+  }
+  getBio(){
+    return this.bio;
+  }
+
 
   createAccount(){
     let configOptions ={
@@ -49,6 +82,7 @@ class User {
   }
 
   showProfile(user){
+    console.log("this.user: ", this.user);
     console.log(user);
     currentUser = user
     let divLogin = document.getElementById("login")
