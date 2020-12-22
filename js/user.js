@@ -34,30 +34,18 @@ class User {
     .catch( error => console.error(error) )
   }
 
-  authenticate(){
-    // passing a static user 
-    // for testing purpose not doing real authentication.
-    let currentUser = {
-      first_name: "Jose",
-      last_name: "Romero",
-      bio: "Hola Mundo estoy volviendo un Developer profesional.",
-      email: "jr@gmail.com",
-      password: "password"
+  authenticate(){   
+    let configOptions = {
+      method: "POST",
+      headers: getHeaders(),
+      body: JSON.stringify( {email: this.email, password: this.password} )
     }
-    this.showProfile(currentUser)
-    
-    // Uncomment this to made real authentication working
-    // let configOptions = {
-    //   method: "POST",
-    //   headers: getHeaders(),
-    //   body: JSON.stringify( {email: this.email, password: this.password} )
-    // }
-    // fetch( getBaseURL() + "/login", configOptions )
-    // .then( response => response.json() )
-    // .then( currentUser => {
-    //   currentUser.error != true ? this.showProfile(currentUser) : this.showErrorMessage(currentUser)
-    // } )
-    // .catch( error => console.error(error) )
+    fetch( getBaseURL() + "/login", configOptions )
+    .then( response => response.json() )
+    .then( currentUser => {
+      currentUser.error != true ? this.showProfile(currentUser) : this.showErrorMessage(currentUser)
+    } )
+    .catch( error => console.error(error) )
   }
 
   showProfile(currentUser){
@@ -71,7 +59,6 @@ class User {
     divUserInfo.hidden = false
     divDashboard.hidden = false
     this.showUserData(currentUser)
-    getGroceryLists().then( showGroceryList() )
   }
 
   showUserData(currentUser){
@@ -91,10 +78,22 @@ class User {
     console.log("post to logout in the backend");
   }
 
-  updateAccount(email, password){
+  updateAccount(){
     console.log("Patch to udpate the user account");
-    this.user.email = email;
-    this.user.password = password;
+    let configOptions = {
+      method: "PATCH",
+      headers: getHeaders(),
+      body: JSON.stringify( {
+        first_name: first_name,
+        last_name: last_name,
+        avatar: avatar,
+        bio: bio
+      })
+    }
+    fetch( getBaseURL() + "/users/" + this.id, configOptions )
+    .then( respoonse => resonse.json() )
+    .then( currentUser => console.log(currentUser) )
+    .catch( error => console.error(error) )
   }
 
   createGroceryList(){
