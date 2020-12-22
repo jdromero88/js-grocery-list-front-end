@@ -38,8 +38,8 @@ function login(event){
   let email = document.getElementById("email").value
   let password = document.getElementById("password").value
   // user = new User(email, password) descomentar para usar autenticaion real.
-  user = new User("jr@gmail.com", "password")
-  user.authenticate()
+  currentUser = new User("jr@gmail.com", "password")
+  currentUser.authenticate()
   // console.log(email);
   event.preventDefault()
 }

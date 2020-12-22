@@ -42,14 +42,15 @@ class User {
     }
     fetch( getBaseURL() + "/login", configOptions )
     .then( response => response.json() )
-    .then( currentUser => {
-      currentUser.error != true ? this.showProfile(currentUser) : this.showErrorMessage(currentUser)
+    .then( user => {
+      user.error != true ? this.showProfile(user) : this.showErrorMessage(user)
     } )
     .catch( error => console.error(error) )
   }
 
-  showProfile(currentUser){
-    console.log(currentUser);
+  showProfile(user){
+    console.log(user);
+    currentUser = user
     let divLogin = document.getElementById("login")
     let divDashboard = document.getElementById("dashboard")
     let divUserInfo = document.getElementById("user-info")
@@ -58,18 +59,18 @@ class User {
     divList.hidden = false
     divUserInfo.hidden = false
     divDashboard.hidden = false
-    this.showUserData(currentUser)
+    this.showUserData(user)
   }
 
-  showUserData(currentUser){
+  showUserData(user){
     let h2ElUserName = document.getElementById("user-name")
-    h2ElUserName.textContent = `${currentUser.first_name} ${currentUser.last_name}`
+    h2ElUserName.textContent = `${user.first_name} ${user.last_name}`
     let pElBio = document.getElementById("bio")
-    pElBio.textContent = `${currentUser.bio}`
+    pElBio.textContent = `${user.bio}`
   }
 
-  showErrorMessage(currentUser){
-    alert(currentUser.message)
+  showErrorMessage(user){
+    alert(user.message)
   }
 
   logout(){
@@ -92,7 +93,7 @@ class User {
     }
     fetch( getBaseURL() + "/users/" + this.id, configOptions )
     .then( respoonse => resonse.json() )
-    .then( currentUser => console.log(currentUser) )
+    .then( user => console.log(cuuserrrentUser) )
     .catch( error => console.error(error) )
   }
 
