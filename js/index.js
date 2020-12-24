@@ -2,6 +2,7 @@
 let ALL_USERS = []
 let ALL_GROCERY_LISTS = []
 let currentUser = null
+let testUser = null
 
 function getBaseURL() {
   return "http://localhost:3000"
