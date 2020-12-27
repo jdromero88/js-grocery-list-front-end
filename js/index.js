@@ -29,36 +29,8 @@ function getGroceryLists(){
   .catch( error => console.error(error) )
 }
 
-
-function signup(email, password) {
-  let newUser = new User(email, password)
-  newUser.createAccount()
-}
-
-function login(event){
-  let email = document.getElementById("email").value
-  let password = document.getElementById("password").value
-  // user = new User(email, password) descomentar para usar autenticaion real.
-  currentUser = new User("jr@gmail.com", "password")
-  currentUser.authenticate()
-  // console.log(email);
-  event.preventDefault()
-}
-
-function alertLogin() {
-  alert("Complete the fields.")
-}
-
-function validateLogin() {
-  (email != "" || password != "") ? true : false
-}
-
-function updateUser(first_name, last_name, avatar, bio) {
-// here must update the user
-}
-
-const LOGIN_FORM = document.getElementById("login-form")
-LOGIN_FORM.addEventListener('submit', login)
+//events when content is loaded
 document.addEventListener("DOMContentLoaded", () => {
   console.log("connected");
+  getGroceryLists()
 })
