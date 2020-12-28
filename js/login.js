@@ -1,4 +1,3 @@
-
 function login(event){
 //   let email = document.getElementById("email").value
 //   let password = document.getElementById("password").value
@@ -6,13 +5,18 @@ function login(event){
 // for testing I am harcoding the user and password
   let email = "jr@gmail.com"
   let password = "password"
+  if (isEmpty(email) || isEmpty(password)) {
+      return alertLogin(event)
+  }
   authenticate(email, password)
-  // console.log(email);
   event.preventDefault()
 }
 
-function alertLogin() {
+function alertLogin(event) {
   alert("Complete the fields.")
+  let email = document.getElementById("email")
+  email.focus()
+  event.preventDefault()
 }
 
 function validateLogin() {

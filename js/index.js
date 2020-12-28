@@ -29,6 +29,14 @@ function getGroceryLists(){
   .catch( error => console.error(error) )
 }
 
+// check if variable is empty
+function isEmpty(value) {
+  if (value === '') {
+    return true
+  }
+  return false
+}
+
 //events when content is loaded
 document.addEventListener("DOMContentLoaded", () => {
   console.log("connected");
