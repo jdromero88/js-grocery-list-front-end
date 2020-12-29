@@ -2,7 +2,6 @@
 let ALL_USERS = []
 let ALL_GROCERY_LISTS = []
 let currentUser = null
-let testUser = null
 
 function getBaseURL() {
   return "http://localhost:3000"
@@ -22,13 +21,6 @@ function getUsers() {
   .catch( error => console.error(error) )
 }
 
-function getGroceryLists(){
-  let testResponse = fetch( getBaseURL() + "/grocery_lists" )
-  .then( response => response.json() )
-  .then( groceryLists => ALL_GROCERY_LISTS = [...groceryLists] )
-  .catch( error => console.error(error) )
-}
-
 // check if variable is empty
 function isEmpty(value) {
   if (value === '') {
@@ -40,5 +32,5 @@ function isEmpty(value) {
 //events when content is loaded
 document.addEventListener("DOMContentLoaded", () => {
   console.log("connected");
-  getGroceryLists()
+  // (currentUser == null) ? console.log("No hay user") : getGroceryLists()
 })

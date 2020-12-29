@@ -57,21 +57,34 @@ function logout(){
 }
 
 function updateAccount(){
-  console.log("Patch to udpate the user account");
+  console.log("Patch to udpate the user account ", currentUser);
   let configOptions = {
     method: "PATCH",
     headers: getHeaders(),
     body: JSON.stringify( {
-      first_name: first_name,
-      last_name: last_name,
-      avatar: avatar,
-      bio: bio
+      first_name: currentUser.first_name,
+      last_name: currentUser.last_name,
+      avatar: currentUser.avatar,
+      bio: currentUser.bio
     })
   }
   fetch( getBaseURL() + "/users/" + this.id, configOptions )
   .then( respoonse => resonse.json() )
   .then( user => console.log(cuuserrrentUser) )
   .catch( error => console.error(error) )
+}
+
+function getGroceryLists(){
+  let testResponse = fetch( getBaseURL() + "/grocery_lists" )
+  .then( response => response.json() )
+  .then( groceryLists => groceryListsByUser(currentUser.id, groceryLists) )
+  .catch( error => console.error(error) )
+}
+
+function groceryListsByUser(id, groceryLists) {
+  console.log(currentUser.id == id);
+  console.log("Hay que filtar. Para que solo este las lista del usuario actual");
+  ALL_GROCERY_LISTS = [...groceryLists]
 }
 
 function createGroceryList(){
@@ -85,3 +98,7 @@ function addProductToGroceryList(){
 function closeGroceryList(){
   console.log("User is done with the grocery list");
 }
+
+// Click Update Profile button
+const UPDATE_PROFILE = document.getElementById("update-profile")
+UPDATE_PROFILE.addEventListener('click', updateAccount)
