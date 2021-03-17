@@ -1,0 +1,29 @@
+{
+  "name": "grocery-list",
+  "version": "1.0.0",
+  "description": "The app to make your grocery list & your life easier.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "css-build": "sass ./assets/scss/index.scss ./assets/css/index.css",
+    "css-watch": "sass --watch ./assets/scss/index.scss ./assets/css/index.css",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdromero88/js-grocery-list-front-end.git"
+  },
+  "keywords": [
+    "grocery",
+    "list",
+    "supermercado",
+    "super",
+    "lista"
+  ],
+  "author": "Jose Romero",
+  "license": "SEE LICENSE IN license.md",
+  "bugs": {
+    "url": "https://github.com/jdromero88/js-grocery-list-front-end/issues"
+  },
+  "homepage": "https://github.com/jdromero88/js-grocery-list-front-end#readme"
+}

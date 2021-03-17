@@ -1,0 +1,58 @@
+// variables
+$color-blanco-100: rgba(255, 255, 255, 1);
+$color-blanco-200: rgba(255, 255, 255, .2);
+
+$color-negro-100: rgba(0, 0, 0, 1);
+$color-negro-200: rgba(0, 0, 0, .2);
+
+$color-rojo-100: rgba(255, 0, 0, 1);
+$color-rojo-800: rgba(255, 0, 0, .8);
+
+$color-verde-100: rgba(43, 98, 18, 1);
+$color-verde-800: rgba(43, 98, 18, 0.8);
+
+html {
+  font-size: 16px;
+  font-family: system-ui;
+}
+
+
+h1 {
+  color: $color-verde-800;
+  font-size: 2rem;
+  text-align: center;
+}
+
+li {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+button {
+  font-size: 1.3rem;
+  line-height: 1.1;
+  margin: .5rem .5rem;
+  padding: .5rem 1rem;
+  border: 1px solid $color-verde-100;
+  background: linear-gradient($color-verde-100, $color-verde-800);
+  color: $color-blanco-100;
+  font-weight: bolder;
+}
+
+input {
+  overflow-x: hidden;
+  font-size: 1.2rem;
+  line-height: .8;
+  margin: .5rem .5rem;
+  border: 1px solid $color-verde-100;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  justify-content: flex-end;
+}

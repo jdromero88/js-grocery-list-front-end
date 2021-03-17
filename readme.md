@@ -1,2 +1,6 @@
 # Grocery List
-App that allow you to create a grocery list so you don't to buy anything.
+Es una app que permite crear una lista para ir al supermercado.
+
+
+## Repos que usa este repo:
+- https://github.com/necolas/normalize.css

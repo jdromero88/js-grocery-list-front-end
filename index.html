@@ -1,51 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <title>Grocery List</title>
-  </head>
-  <body>
-    <div class="main">
-      <div id="login" class="center login">
-        <form id="login-form">
-          <h1 class="center">Login</h1>
-          <div class="user-information">
-            <input class="form-input" id="email" type="email" placeholder="youremail@example.com" alt="email" required>
-            <input class="form-input" id="password" type="password" placeholder="password" alt="password"
-            autocomplete="current-password" minlength="7" required>
-          </div>
-          <div class="side-by-side">
-            <input class="btn btn-green" type="submit" value="Login" >
-            <input class="btn btn-red" type="reset" value="Clear form">
-          </div>
-        </form>
-      </div>
-      <div id="dashboard" class="side-by-side" hidden>
-        <div id="user-info" class="user-profile" hidden>
-          <h2 id="user-name" class="center-text">User Name</h2>
-          <div class="profile-pic">
-            <div class="circle center-content"></div>
-            <div class="torse center-content"></div>
-          </div>
-          <p id="bio" class="justify-text">bio goes here so we can learn more about the user.</p>
-          <button id="update-profile" class="btn btn-green">Update Profile</button>
-        </div>
-        <div id="list" class="list" hidden>
-          <h2 class="center-text">Your Lists:</h2>
-          <ul>
-            <li>Nombre: <a href="#">Lista 1</a></li>
-            <li>Nombre: <a href="#">Lista 2</a></li>
-            <li>Nombre: <a href="#">Lista 3</a></li>
-            <li>Nombre: <a href="#">Comprar urgente</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <script src="./js/index.js" charset="utf-8"></script>
-    <script src="./js/login.js" charset="utf-8"></script>
-    <script src="./js/user.js" charset="utf-8"></script>
-    <script src="./js/grocery-list.js" charset="utf-8"></script>
-  </body>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Grocery List</title>
+		<link rel="stylesheet" href="./assets/css/normalize.css">
+		<link rel="stylesheet" href="./assets/css/index.css">
+	</head>
+
+	<body>
+		<main>
+			<h1>Lista Super</h1>
+			<div class="center">
+				<button id="crearLista" class="center" type="button" name="button">Crear Nueva Lista</button>
+			</div>
+			<div id='listaContenedor' class="lista">
+				<input id="nuevoProducto" type="text" name="producto" placeholder="Ingrese el producto">
+				<input id="cantidad" type="number" name="cantidad" placeholder="Cantidad: 1 o más">
+			</div>
+			<div class="right">
+				<button id="addProducto" type="button" name="button">+</button>
+			</div>
+			<button id="mostrarProductos" type="button" name="button">Listar Productos</button>
+			<ol id="lista"></ol>
+		</main>
+		<footer id="footer"></footer>
+		<script src="./assets/js/index.js"></script>
+		<script src="./assets/js/producto.js"></script>
+	</body>
+
 </html>
