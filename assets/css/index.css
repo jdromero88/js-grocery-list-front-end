@@ -3,6 +3,22 @@ html {
   font-family: system-ui;
 }
 
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  background-color: rgba(43, 98, 18, 0.8);
+  color: rgba(255, 255, 255, 0.2);
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
 h1 {
   color: rgba(43, 98, 18, 0.8);
   font-size: 2rem;

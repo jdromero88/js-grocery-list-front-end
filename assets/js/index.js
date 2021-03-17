@@ -10,6 +10,10 @@ function iniciaTodo() {
 	console.log('connected')
 	let footerEl = document.getElementById('footer')
 	footerEl.innerHtml = year.getFullYear() + `&copy; Grocery List`
+  let pEl = document.createElement('p')
+	// TODO: agregar texto en el footer
+	pEl.innerHTML = year.getFullYear() + `&copy; Grocery List`
+  footerEl.appendChild(pEl)
 }
 
 function validateInput(producto, cantidad) {
@@ -35,8 +39,7 @@ function addProducto() {
 
 	let p = new Producto(productoParaAgregar.value, cantidad.value)
 	productos.push(p)
-	productoLiEl.innerHTML = p.name + " <strong>quantity</strong>: " + p.cantidad
-
+	productoLiEl.innerHTML = p.mostarProducto()
 	listaOlEl.appendChild(productoLiEl)
 }
 
