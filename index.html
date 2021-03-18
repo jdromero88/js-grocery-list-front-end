@@ -10,22 +10,45 @@
 	</head>
 
 	<body>
-		<main>
-			<h1>Lista Super</h1>
-			<div class="center">
-				<button id="crearLista" class="center" type="button" name="button">Crear Nueva Lista</button>
+		<main class="index">
+			<h1 class="index__h1">Lista Super</h1>
+			<div class="index--center">
+				<button id="crearLista"
+					class="index__button"
+					type="button"
+					name="button">
+				Crear Nueva Lista
+				</button>
 			</div>
-			<div id='listaContenedor' class="lista">
-				<input id="nuevoProducto" type="text" name="producto" placeholder="Ingrese el producto">
-				<input id="cantidad" type="number" name="cantidad" placeholder="Cantidad: 1 o más">
+			<div id='listaContenedor' class="index--center">
+				<input id="nuevoProducto"
+					class="index__input"
+					type="text"
+					name="producto"
+					placeholder="Ingrese el producto">
+				<input id="cantidad"
+					class="index__input"
+					type="number"
+					name="cantidad"
+					placeholder="Cantidad: 1 o más">
 			</div>
-			<div class="right">
-				<button id="addProducto" type="button" name="button">+</button>
+			<div class="index--right">
+				<button id="addProducto"
+					class="index__button"
+					type="button"
+					name="button">
+					+
+				</button>
 			</div>
-			<button id="mostrarProductos" type="button" name="button">Listar Productos</button>
+			<button id="mostrarProductos"
+				class="index__button"
+				type="button"
+				name="button">
+				Listar Productos
+			</button>
 			<ol id="lista"></ol>
 		</main>
-		<footer id="footer"></footer>
+		<footer id="footer" class="footer"></footer>
 		<script src="./assets/js/index.js"></script>
 		<script src="./assets/js/producto.js"></script>
 	</body>

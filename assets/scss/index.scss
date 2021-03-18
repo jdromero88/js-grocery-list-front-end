@@ -26,7 +26,7 @@ header {
 
 }
 
-footer {
+.footer {
   background-color: $color-verde-800;
   color: $color-blanco-200;
   height: 4rem;
@@ -36,42 +36,53 @@ footer {
   margin-top: auto;
 }
 
-h1 {
-  color: $color-verde-800;
-  font-size: 2rem;
-  text-align: center;
-}
+.index {
+  &__h1 {
+    color: $color-verde-800;
+    font-size: 2rem;
+    text-align: center;
+  }
 
-li {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
+  &__li {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
 
-button {
-  font-size: 1.3rem;
-  line-height: 1.1;
-  margin: .5rem .5rem;
-  padding: .5rem 1rem;
-  border: 1px solid $color-verde-100;
-  background: linear-gradient($color-verde-100, $color-verde-800);
-  color: $color-blanco-100;
-  font-weight: bolder;
-}
+  &__button {
+    font-size: 1.3rem;
+    line-height: 1.1;
+    margin: .5rem .5rem;
+    padding: .5rem 1rem;
+    border: 1px solid $color-verde-100;
+    background: linear-gradient($color-verde-100, $color-verde-800);
+    color: $color-blanco-100;
+    font-weight: bolder;
+  }
 
-input {
-  overflow-x: hidden;
-  font-size: 1.2rem;
-  line-height: .8;
-  margin: .5rem .5rem;
-  border: 1px solid $color-verde-100;
-}
+  &__input {
+    overflow-x: hidden;
+    font-size: 1.2rem;
+    line-height: .8;
+    margin: .5rem .5rem;
+    border: 1px solid $color-verde-100;
+  }
 
-.center {
-  display: flex;
-  justify-content: center;
-}
+  &--center {
+    display: flex;
+    justify-content: center;
+  }
 
-.right {
-  display: flex;
-  justify-content: flex-end;
+  &--right {
+    display: flex;
+    justify-content: flex-end;
+    @media screen and (min-width: 640px) {
+      margin: 0 auto;
+      max-width: 690px;
+    }
+  }
+
+  &--left {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
