@@ -4,6 +4,23 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<meta name="keywords" content="lista, list, grocery list"/>
+		<meta name="description" content="Realiza una lista rapida | Website to make a quick list"/>
+		<meta name="subject" content="Realiza una lista rapida | Website to make a quick list">
+		<meta name="copyright"content="Jose Romero">
+		<meta name="robots" content="index,follow" />
+		<meta name="topic" content="lista">
+		<meta name="summary" content="Realiza una lista rapida | Website to make a quick list">
+		<meta name="author" content="Jose Romero, hola@josedromero.com">
+		<meta name="designer" content="Jose Romero">
+		<meta name="copyright" content="">
+		<meta name="reply-to" content="hola@josedromero.com">
+		<meta name="owner" content="Jose Romero">
+		<meta name="url" content="https://www.lista.josedromero.com">
+		<meta name="identifier-URL" content="https://www.lista.josedromero.com">
+
+
 		<title>Grocery List</title>
 		<link rel="stylesheet" href="./assets/css/normalize.css">
 		<link rel="stylesheet" href="./assets/css/index.css">
@@ -11,13 +28,7 @@
 
 	<body>
 		<main class="index">
-			<h1 class="index__h1 index__center">Tu Lista</h1>
-			<!-- <button id="crearLista"
-				class="index__button"
-				type="button"
-				name="button">
-			Crear Nueva Lista
-			</button> -->
+			<h1 class="index__h1 index__center">Tu Lista | Your List</h1>
 			<input id="nuevoProducto"
 				class="index__input index__center"
 				type="text"
@@ -27,6 +38,7 @@
 				class="index__input index__center"
 				type="number"
 				name="cantidad"
+				value="1"
 				placeholder="Cantidad: 1 o más">
 			<button id="addProducto"
 				class="index__button index__button__icon"
@@ -40,8 +52,9 @@
 				name="button">
 				Listar Productos
 			</button>
-			<ol id="lista" class="index__center"></ol>
+			<ol id="lista" class=""></ol>
 		</main>
+		<!-- TODO: make footer sticky to the bottom. -->
 		<footer id="footer" class="footer"></footer>
 		<script src="./assets/js/index.js"></script>
 		<script src="./assets/js/producto.js"></script>

@@ -48,7 +48,13 @@ body {
 
   &__li {
     margin-top: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+  }
+
+  &__line-through {
+    // color: $color-verde-100;
+    text-decoration: line-through;
+
   }
 
   &__button {

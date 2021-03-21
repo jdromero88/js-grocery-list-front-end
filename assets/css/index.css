@@ -24,7 +24,10 @@ html {
 }
 .index__li {
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+}
+.index__line-through {
+  text-decoration: line-through;
 }
 .index__button {
   font-size: 1.3rem;
