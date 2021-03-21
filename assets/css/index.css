@@ -3,12 +3,6 @@ html {
   font-family: system-ui;
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .footer {
   background-color: rgba(43, 98, 18, 0.8);
   color: rgba(255, 255, 255, 0.2);
@@ -19,10 +13,14 @@ body {
   margin-top: auto;
 }
 
+.index {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .index__h1 {
   color: rgba(43, 98, 18, 0.8);
   font-size: 2rem;
-  text-align: center;
 }
 .index__li {
   margin-top: 1rem;
@@ -38,30 +36,48 @@ body {
   color: white;
   font-weight: bolder;
 }
+.index__button__icon {
+  padding: 0;
+  width: 2.3rem;
+  height: 2.3rem;
+}
+@media screen and (min-width: 640px) {
+  .index__button {
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    line-height: 0.9;
+  }
+}
 .index__input {
-  overflow-x: hidden;
   font-size: 1.2rem;
   line-height: 0.8;
   margin: 0.5rem 0.5rem;
   border: 1px solid #2b6212;
 }
-.index--center {
+@media screen and (min-width: 640px) {
+  .index__input {
+    margin: 1rem auto;
+    font-size: 1.5rem;
+    line-height: 0.9;
+  }
+}
+.index__center {
   display: flex;
   justify-content: center;
 }
-.index--right {
+.index__right {
   display: flex;
   justify-content: flex-end;
 }
-@media screen and (min-width: 640px) {
-  .index--right {
-    margin: 0 auto;
-    max-width: 690px;
-  }
-}
-.index--left {
+.index__left {
   display: flex;
   justify-content: flex-start;
+}
+@media screen and (min-width: 640px) {
+  .index {
+    width: 50vw;
+    margin: 0 auto;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

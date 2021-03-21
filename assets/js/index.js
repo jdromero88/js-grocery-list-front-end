@@ -54,6 +54,6 @@ function crearLista() {
 
 window.addEventListener('DOMContentLoaded', iniciaTodo)
 
-document.getElementById('crearLista').addEventListener('click', crearLista)
+// document.getElementById('crearLista').addEventListener('click', crearLista)
 document.getElementById('addProducto').addEventListener('click', addProducto)
 document.getElementById('mostrarProductos').addEventListener('click', mostarProductos)
