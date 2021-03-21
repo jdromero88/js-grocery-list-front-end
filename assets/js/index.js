@@ -26,9 +26,10 @@ function validateInput(producto, cantidad) {
 
 function addProducto() {
 	let productoLiEl = crearElemento('li')
+	productoLiEl.setAttribute('class', 'index__li')
 
 	let listaOlEl = document.getElementById('lista')
-	let productoParaAgregar = document.getElementById('nuevoProducto')
+	let productoParaAgregar = getProductoInputEl()
 	let cantidad = document.getElementById('cantidad')
 
 	if (!validateInput(productoParaAgregar.value, cantidad.value)) {
@@ -39,8 +40,26 @@ function addProducto() {
 
 	let p = new Producto(productoParaAgregar.value, cantidad.value)
 	productos.push(p)
+	productoLiEl.setAttribute('id', p.nombre)
 	productoLiEl.innerHTML = p.mostarProducto()
 	listaOlEl.appendChild(productoLiEl)
+	productoLiEl.addEventListener('click', () => removeProducto(p.nombre))
+	getProductoInputEl().value = ""
+	getProductoInputEl().focus()
+}
+
+function removeProducto(nombre) {
+	let productoLiEl = getProductoLiEl(nombre)
+	productoLiEl.classList.add('index__line-through')
+	console.log('here we must remove the producto', nombre);
+}
+
+function getProductoLiEl(id) {
+	return document.querySelector(`#${id}`)
+}
+
+function getProductoInputEl() {
+	return document.getElementById('nuevoProducto')
 }
 
 function mostarProductos() {
@@ -54,6 +73,6 @@ function crearLista() {
 
 window.addEventListener('DOMContentLoaded', iniciaTodo)
 
-document.getElementById('crearLista').addEventListener('click', crearLista)
+// document.getElementById('crearLista').addEventListener('click', crearLista)
 document.getElementById('addProducto').addEventListener('click', addProducto)
 document.getElementById('mostrarProductos').addEventListener('click', mostarProductos)
