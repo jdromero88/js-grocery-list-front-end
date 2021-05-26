@@ -27,6 +27,12 @@ function addProducto() {
   let productoLiEl = crearElemento('li');
   productoLiEl.setAttribute('class', 'index__li');
 
+  let productoPEl = crearElemento('p');
+
+  let btnEliminar = crearElemento('button')
+  btnEliminar.innerText = 'X'
+  btnEliminar.setAttribute('class', 'index__button')
+
   let listaOlEl = document.getElementById('lista');
   let productoParaAgregar = getProductoInputEl();
   let cantidad = document.getElementById('cantidad');
@@ -39,10 +45,14 @@ function addProducto() {
 
   let p = new Producto(productoParaAgregar.value, cantidad.value);
   productos.push(p);
-  productoLiEl.setAttribute('id', p.nombre);
-  productoLiEl.innerHTML = p.mostarProducto();
+  // productoLiEl.setAttribute('id', p.nombre);
+  // productoLiEl.innerHTML = p.mostarProducto();
+  productoPEl.setAttribute('id', p.nombre);
+  productoPEl.innerHTML = p.mostarProducto();
+  productoLiEl.appendChild(productoPEl)
+  productoLiEl.appendChild(btnEliminar)
   listaOlEl.appendChild(productoLiEl);
-  productoLiEl.addEventListener('click', () => strikethroughProducto(p.nombre));
+  productoPEl.addEventListener('click', () => strikethroughProducto(p.nombre));
   getProductoInputEl().value = '';
   getProductoInputEl().focus();
 }

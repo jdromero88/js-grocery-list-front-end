@@ -8,4 +8,7 @@ class Producto {
     return this.nombre + " <strong>quantity</strong>: " + this.cantidad
   }
 
+  eliminarProducto() {
+    
+  }
 }
