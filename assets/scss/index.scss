@@ -47,7 +47,9 @@ body {
   }
 
   &__li {
+    display: flex;
     margin-top: 1rem;
+    margin-left: 1rem;
     font-size: 1.7rem;
   }
 

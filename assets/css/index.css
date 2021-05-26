@@ -23,7 +23,9 @@ html {
   font-size: 2rem;
 }
 .index__li {
+  display: flex;
   margin-top: 1rem;
+  margin-left: 1rem;
   font-size: 1.7rem;
 }
 .index__line-through {
